@@ -1,0 +1,24 @@
+.header {
+    height: auto;
+    padding: 0;
+  }
+  
+  .footer {
+    text-align: center;
+    font-size: 14px;
+    background: #89949B;
+    color: #CCD6DF;
+    height: 70px;
+  }
+  
+  body {
+    font-family: "Microsoft YaHei"
+  }
+
+  .buttonwrapper {
+      margin: 0 20%;
+      padding: 20px;
+      border-radius: 4px;
+      background-color: #ffffff;
+
+  }

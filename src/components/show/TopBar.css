@@ -1,0 +1,245 @@
+.row {
+    position: relative;
+    height: 62px;
+    border-bottom: 4px solid #CD2836;
+    background-image: linear-gradient(90deg, #093C5E 0%, #1177BA 100%);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#093C5E', endColorStr='#1177BA', gradientType='1'); 
+}
+
+.logo {
+    width: 163px;
+    height: 24px;
+}
+.logoTitle {
+    position: absolute;
+    left: 222px;
+    line-height: 20px;
+    top: 18px;
+    color: #FBFBFB;
+    font-size: 20px;
+}
+
+.logoContainer {
+    position: absolute;
+    left: 37px;
+    top: 18px;
+}
+
+.tips {
+    float: right;
+}
+
+.iconMsg, .iconDraft, .iconUser {
+    top: 6px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.iconMsg {
+    top: 4px;
+    width: 21px;
+    height: 16px;
+}
+
+.iconDraft {
+    width: 21px;
+    height: 21px;
+}
+
+.iconUser {
+
+    width: 22px;
+    height: 22px;
+}
+
+.unitContainer {
+    height: 100%;
+    float: right;
+}
+
+.unit {
+    float: left;
+    width: 112px;
+    color: #fff;
+    height: 100%;
+    line-height: 60px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .unitContainer {
+        height: 100%;
+        float: right;
+        width: 45%;
+    } 
+    .unit {
+        float: left;
+        color: #fff;
+        height: 100%;
+        line-height: 60px;
+        width: 33.33%;
+    }
+}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+    .iconMsg, .iconDraft, .iconUser {
+        left: 15px;
+        top: 6px;
+        position: relative;
+        margin-right: 25px;
+    }
+}
+
+.logoutBox {
+    float: right;
+    font-size: 30px;
+    width: 75px;
+    height: 75px;
+    background-color: #E76049;
+    color: white;
+    line-height: 75px;
+    text-align: center;
+}
+
+.notificationBox {
+    cursor: pointer;
+    font-size: 30px;
+    width: 75px;
+    height: 75px;
+    color: #89949B;
+    line-height: 75px;
+    text-align: center;
+}
+
+.notificationBox:hover {
+    color: white;
+}
+
+.boxLi {
+    padding: 10px 16px;
+    font-size: 12px;
+}
+
+.boxLi:first-child {
+    background: #FFF9C4;
+}
+
+.boxLi:hover {
+    background: #eee;
+}
+
+.boxUl {
+    max-height: 260px;
+    overflow: auto;
+}
+
+.boxUl::-webkit-scrollbar {
+    width: 6px;
+}
+
+.boxUl::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.boxPopover :global .ant-popover-inner-content {
+    padding: 0;
+}
+
+.box li {
+    float: right;
+}
+
+.divider {
+    height: 75px;
+    border: 1px solid rgba(59, 70, 72, .45);
+}
+
+.userInfo {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.role {
+    width: 200px;
+    height: 75px;
+    line-height: 75px;
+}
+
+:global .ant-badge-count {
+    height: 14px;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+:global .ant-badge-not-a-wrapper .ant-badge-count {
+    position: relative;
+    top: -13px;
+}
+
+:global .ant-popover-title {
+    height: 53px;
+    cursor: pointer;
+    line-height: 53px;
+    padding: 0;
+    width: 283px;
+    color: #333333;
+    font-size: 14px;
+    letter-spacing: 1.17px;
+}
+
+:global .ant-popover-title li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+:global .ant-popover-title li:hover {
+    color: #3DAEF8;
+    border-bottom: 1px solid #3DAEF8;
+}
+
+:global .ant-popover-inner-content {
+    font-size: 12px;
+    color: #333333;
+    letter-spacing: 1px;
+}
+
+:global .ant-popover-inner-content li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #CACACA;
+}
+
+:global .ant-popover-inner-content p {
+    position: absolute;
+    width: 78px;
+    left: 33%;
+    text-align: center;
+    padding-bottom: 13px;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.itemDate {
+    display: block;
+    float: right;
+    height: 100%;
+    line-height: 40px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1190px) {
+    .logoTitle {
+        position: absolute;
+        left: 196px;
+        line-height: 20px;
+        top: 18px;
+        color: #FBFBFB;
+        font-size: 18px;
+    }
+    .logoContainer {
+        position: absolute;
+        left: 20px;
+        top: 18px;
+    }
+}
