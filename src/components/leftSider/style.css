@@ -1,0 +1,30 @@
+.container{
+    height: inherit;
+    background-color: #383838;
+}
+.title{
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #001529;
+    font-size: 18px;
+    color: white;
+}
+.add_template{
+    background-color: white;
+    width: 120px;
+    height: 160px;
+    border: 1px solid ;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.scroll{
+    overflow: auto;
+    height: 100%;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}

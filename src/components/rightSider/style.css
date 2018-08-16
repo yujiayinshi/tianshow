@@ -1,0 +1,35 @@
+.container{
+    height: inherit;
+    background-color: #383838;
+}
+.color-box{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  justify-content: space-around;
+  -webkit-justifi-content: space-around;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.color{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.swatch {
+  display: inline-block;
+  cursor: pointer;
+};
+.popover{
+  position: absolute;
+  z-index: 2;
+  right: 0;
+};
+.cover{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+};

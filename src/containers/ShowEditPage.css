@@ -1,0 +1,13 @@
+.nav_box{
+   width:100%;
+   height: 56px;
+   background-color: #001529;
+}
+.edit_nav{
+   line-height: 56px;
+   width: 60%;
+   text-align: right;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+}

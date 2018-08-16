@@ -1,0 +1,14 @@
+.container{
+    height: inherit;
+    background-color: #191919;
+    text-align: center;
+} 
+.edit_template{
+    margin-top: 38px;
+    box-shadow: 0 0 5px 0 #191919;
+    width: 320px;
+    height: 485px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}

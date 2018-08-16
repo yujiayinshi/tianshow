@@ -1,0 +1,26 @@
+.template_container{
+    display: flex;
+    display: -webkit-flex;
+    padding: 10px 10px;
+}
+.left_box{
+    flex: 1;
+    -webkit-flex: 1;
+    color: #8f8585;
+    text-align: center;
+}
+.left_icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.icon{
+    font-size: 22px;
+    padding: 8px 0;
+}
+.right_content{
+    background-color: white;
+    width: 120px;
+    height: 160px;
+    border: 1px solid ;
+}

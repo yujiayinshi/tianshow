@@ -1,0 +1,9 @@
+.remove-point{
+    display: none;
+    position: absolute;
+    line-height: 0;
+    top: 0;
+    right: -8px;
+    color: #909090;
+    cursor: pointer;
+}
