@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Button } from 'antd'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { queryShowContent } from '../actions/show'
 
 const { Header, Content, Sider } = Layout
 
+@connect(
+  (state) => ({show: state.show}),
+  { queryShowContent }
+)
 class ShowEditPage extends Component {
   static propTypes = {
   }
@@ -38,4 +44,4 @@ class ShowEditPage extends Component {
   }
 }
 
-export default ShowEditPage;
+export default ShowEditPage
