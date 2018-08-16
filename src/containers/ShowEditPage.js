@@ -5,13 +5,26 @@ import style from './ShowEditPage.css'
 import LeftSider from '../components/leftSider/index'
 import RightSider from '../components/rightSider/index'
 import EditContent from '../components/editContent/index'
+import { connect } from 'react-redux'
+import { queryShowContent } from '../actions/show'
+
 const { Header, Content, Sider } = Layout
+
+@connect(
+  (state) => ({show: state.show}),
+  { queryShowContent }
+)
 
 class ShowEditPage extends Component {
   static propTypes = {
-  }
+    show: '',
 
+  }
+  componentWillMount(){
+    this.props.queryShowContent({text: '你好啊'});
+  }
   render() {
+    console.log('show', this.props.show.text);
     return (
         <Layout>
           <div className={style['nav_box']}>
@@ -46,4 +59,4 @@ class ShowEditPage extends Component {
   }
 }
 
-export default ShowEditPage;
+export default ShowEditPage
