@@ -25,7 +25,7 @@
     display: none;
     position: absolute;
     line-height: 0;
-    top: 0;
+    top: -6px;
     right: -8px;
     color: #909090;
     cursor: pointer;
@@ -35,14 +35,14 @@
     padding: 5px;
 }
 .right-bottom{
-    bottom: 5PX;
-    right: 5PX;
+    bottom: -5PX;
+    right: -5PX;
     cursor: se-resize;
 }
 .right{
     top: 50%;
-    right: 5PX;
-    margin-top: 5PX;
+    right: -5PX;
+    margin-top: -5PX;
     cursor: e-resize;
 }
 
@@ -53,7 +53,7 @@
 }
 .bottom {
     left: 50%;
-    bottom: 5PX;
+    bottom: -5PX;
     margin-left: -6px;
     cursor: n-resize;
 }

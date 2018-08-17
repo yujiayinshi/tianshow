@@ -90,9 +90,8 @@ class Page extends React.Component {
         if (element == rootElement) {
             return undefined;
         }
-        //let result = element.classList.contains(className);
-        let result = element.classList;
-        console.log('result',result);
+        let result = element.classList.contains(className);
+        console.log('result',element.classList);
         if (result) {
             return element
         }
@@ -105,7 +104,6 @@ class Page extends React.Component {
      * @param e
      */
     prepareResize(type, e) {
-        //let element = e.target;
         let element = this.findParentByClassName(e.target, 'element', 'element');
         console.log('element12312',element);
         if (element) {
