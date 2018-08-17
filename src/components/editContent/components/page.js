@@ -104,7 +104,7 @@ class Page extends React.Component {
      * @param e
      */
     prepareResize(type, e) {
-        let element = this.findParentByClassName(e.target, 'element', 'element');
+        let element = this.findParentByClassName(e.target, 'element-1DYLV', 'element-1DYLV');
         console.log('element12312',element);
         if (element) {
             this.currentElementDom = element;
@@ -124,7 +124,7 @@ class Page extends React.Component {
 
     mouseDownHandle(e) {
         // let element = e.target;
-        let element = this.findParentByClassName(e.target, e.currentTarget, 'element');
+        let element = this.findParentByClassName(e.target, e.currentTarget, 'element-1DYLV');
         console.log('element',element);
         if (element) {
             //移除非当前元素的active样式
