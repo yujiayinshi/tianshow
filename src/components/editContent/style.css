@@ -34,31 +34,39 @@
     border: 2px dotted #8aa7ff;
     padding: 5px;
 }
-.right-bottom{
+.active>.right-bottom{
     bottom: -5PX;
     right: -5PX;
     cursor: se-resize;
 }
-.right{
+.active>.right{
     top: 50%;
     right: -5PX;
     margin-top: -5PX;
     cursor: e-resize;
 }
 
-.left {
+.active>.left {
     top: 50%;
     left: 5PX;
     margin-top: 5PX;
 }
-.bottom {
+.active>.bottom {
     left: 50%;
     bottom: -5PX;
     margin-left: -6px;
     cursor: n-resize;
 }
-.remove-point {
+.active>.remove-point {
     display: block;
+}
+.active>.resize-point{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: red;
+    position: absolute;
+    cursor: move;
 }
 .full {
     width: 100%;
@@ -70,12 +78,4 @@
     border: none;
     background-color: inherit;
     word-wrap: break-word;
-}
-.resize-point{
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: red;
-    position: absolute;
-    cursor: move;
 }

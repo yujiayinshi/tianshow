@@ -28,6 +28,7 @@ class Text extends React.Component {
         let target = e.target;
         target.contentEditable = true;
         target.focus();
+        console.log('聚焦');
     }
 
     saveText(e) {
@@ -35,7 +36,8 @@ class Text extends React.Component {
         if (content.length == 0) {
             content = '双击修改';
         }
-        this.props.upDataElementEntity({value: content});
+        console.log('双击点击');
+        this.props.upDataElementEntity({value: content,className:'active'});
     }
 
 }

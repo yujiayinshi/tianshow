@@ -35,6 +35,7 @@ class ShowEditPage extends Component {
           >
               <Menu.Item key="1" onClick={()=>this.props.getElement({
                   elementType: 'TEXT',
+                  className:'active',
                   width: 'auto',
                   height: 'auto',
                   value: '双击修改',

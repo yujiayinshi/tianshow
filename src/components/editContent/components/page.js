@@ -41,7 +41,7 @@ class Page extends React.Component {
 
     render() {
         const {elementsEntity} = this.props;
-        let elements = this.buildElementByType(elementsEntity,'active',false);
+        let elements = this.buildElementByType(elementsEntity,elementsEntity.className,false);
         return (
             <div onMouseMove={this.mouseMoveHandle.bind(this)}
                  onMouseLeave={this.mouseLeaveHandle.bind(this)}
@@ -85,18 +85,17 @@ class Page extends React.Component {
         }
     }
 
-
+    //查找dom
     findParentByClassName=(element, rootElement, className)=>{
         if (element == rootElement) {
             return undefined;
         }
         let result = element.classList.contains(className);
-        console.log('result',element.classList);
         if (result) {
             return element
         }
         return this.findParentByClassName(element.parentElement, rootElement, className);
-    }
+    };
 
     /**
      * 点击resize btn
@@ -105,7 +104,6 @@ class Page extends React.Component {
      */
     prepareResize(type, e) {
         let element = this.findParentByClassName(e.target, 'element-1DYLV', 'element-1DYLV');
-        console.log('element12312',element);
         if (element) {
             this.currentElementDom = element;
             this.readyResize = true;
@@ -123,9 +121,7 @@ class Page extends React.Component {
     }
 
     mouseDownHandle(e) {
-        // let element = e.target;
         let element = this.findParentByClassName(e.target, e.currentTarget, 'element-1DYLV');
-        console.log('element',element);
         if (element) {
             //移除非当前元素的active样式
             let activeElements = document.querySelectorAll('.element.active');
@@ -150,24 +146,24 @@ class Page extends React.Component {
 
     activeElement(element, e) {
         //Store.dispatch(ElementsAction.active(element));
-        //this.props.upDataElementEntity({elements:element})
+        this.props.upDataElementEntity({className:'active'})
     }
 
     mouseUpHandle(e) {
         //停止拖拽或移动
         if (this.currentElementDom) {
             //Store.dispatch(ElementsAction.save(this.currentElementDom.style.width, this.currentElementDom.style.height, this.currentElementDom.style.left, this.currentElementDom.style.top));
-            // this.props.upDataElementEntity({
-            //     width: this.currentElementDom.style.width,
-            //     height: this.currentElementDom.style.height,
-            //     left: this.currentElementDom.style.left,
-            //     top: this.currentElementDom.style.top,
-            // })
+            this.props.upDataElementEntity({
+                width: this.currentElementDom.style.width,
+                height: this.currentElementDom.style.height,
+                left: this.currentElementDom.style.left,
+                top: this.currentElementDom.style.top,
+            })
         }
         //释放当前元素
         else {
             //Store.dispatch(ElementsAction.release());
-            this.props.upDataElementEntity(this.props.elementsEntity);
+            this.props.upDataElementEntity({className:''});
         }
         this.currentElementDom = null;
         this.readyMove = false;
@@ -179,12 +175,12 @@ class Page extends React.Component {
         //停止拖拽或移动
         if (this.currentElementDom) {
             //Store.dispatch(ElementsAction.save(this.currentElementDom.style.width, this.currentElementDom.style.height, this.currentElementDom.style.left, this.currentElementDom.style.top));
-            // this.props.upDataElementEntity({
-            //     width: this.currentElementDom.style.width,
-            //     height: this.currentElementDom.style.height,
-            //     left: this.currentElementDom.style.left,
-            //     top: this.currentElementDom.style.top,
-            // })
+            this.props.upDataElementEntity({
+                width: this.currentElementDom.style.width,
+                height: this.currentElementDom.style.height,
+                left: this.currentElementDom.style.left,
+                top: this.currentElementDom.style.top,
+            })
         }
         this.readyMove = false;
         this.readyResize = false;
