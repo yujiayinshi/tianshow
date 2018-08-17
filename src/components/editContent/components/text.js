@@ -35,7 +35,7 @@ class Text extends React.Component {
         if (content.length == 0) {
             content = '双击修改';
         }
-        //Store.dispatch(ElementsAction.updateValue(content));
+        this.props.upDataElementEntity({value: content});
     }
 
 }
@@ -44,8 +44,8 @@ Text.defauleProps = {
     fontSize: 16
 };
 
-Text.propTypes = {
-    fontSize: React.PropTypes.number
-};
+// Text.propTypes = {
+//     fontSize: React.PropTypes.number
+// };
 
 export default Text

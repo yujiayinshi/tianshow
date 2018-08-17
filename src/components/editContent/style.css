@@ -3,7 +3,7 @@
     background-color: #191919;
     text-align: center;
 } 
-.edit_template{
+.page{
     margin-top: 38px;
     box-shadow: 0 0 5px 0 #191919;
     width: 320px;
@@ -11,4 +11,71 @@
     overflow: hidden;
     position: relative;
     display: inline-block;
+}
+.element{
+    padding: 7px;
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    /* 内容禁止选择 */
+    -webkit-user-select: none;
+    user-select: none;
+}
+.remove-point{
+    display: none;
+    position: absolute;
+    line-height: 0;
+    top: 0;
+    right: -8px;
+    color: #909090;
+    cursor: pointer;
+}
+.active{
+    border: 2px dotted #8aa7ff;
+    padding: 5px;
+}
+.right-bottom{
+    bottom: 5PX;
+    right: 5PX;
+    cursor: se-resize;
+}
+.right{
+    top: 50%;
+    right: 5PX;
+    margin-top: 5PX;
+    cursor: e-resize;
+}
+
+.left {
+    top: 50%;
+    left: 5PX;
+    margin-top: 5PX;
+}
+.bottom {
+    left: 50%;
+    bottom: 5PX;
+    margin-left: -6px;
+    cursor: n-resize;
+}
+.remove-point {
+    display: block;
+}
+.full {
+    width: 100%;
+    height: 100%;
+}
+.text {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    word-wrap: break-word;
+}
+.resize-point{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: red;
+    position: absolute;
+    cursor: move;
 }

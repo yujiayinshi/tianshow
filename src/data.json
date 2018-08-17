@@ -1,0 +1,40 @@
+{
+  "title": "标题",
+  "desc": "描述",
+  "pages":[
+    {
+      "bgColor": "背景颜色",
+      "bgImage": "背景图片",
+      "height": "600",
+      "width": "320",
+      "opacity":"1",
+      "cmps":[
+        {
+          "type":"text",
+          "id":"1",
+          "innerText":"输入的文本",
+          "top":"",
+          "left":"",
+          "right":"",
+          "bottom":"",
+          "color":"",
+          "fontSize":"",
+          "width":"",
+          "height":""
+        },{
+          "type":"img",
+          "id":"1",
+          "imgPath":"url...",
+          "top":"",
+          "left":"",
+          "right":"",
+          "bottom":"",
+          "color":"",
+          "fontSize":"",
+          "width":"",
+          "height":""
+        }
+      ]
+    }
+  ]
+}

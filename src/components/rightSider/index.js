@@ -1,12 +1,14 @@
 import React from 'react'
 import style from './style.css'
 import { CirclePicker, SketchPicker} from 'react-color'
-
+import {connect} from 'react-redux'
+import { backgroundColor } from '../../actions/show'
 /*
 * 右边栏编辑组件
 *
 * */
 
+@connect((state)=>({}),{backgroundColor})
 
 export default class extends React.Component{
     constructor(props){
@@ -17,23 +19,26 @@ export default class extends React.Component{
         }
     }
     handleClick = () => {
-      this.setState({ displayColorPicker: !this.state.displayColorPicker })
+        this.setState({ displayColorPicker: !this.state.displayColorPicker })
     };
 
     handleClose = () => {
-      console.log('shfhksa');
-      this.setState({ displayColorPicker: false })
+        this.setState({ displayColorPicker: false })
     };
 
     handleChange = (color) => {
-      this.setState({ color: color.hex })
+        this.setState({color: color.hex},()=>this.props.backgroundColor({bgColor:color.hex}))
+    };
+
+    handleCircle = (color) =>{
+        this.props.backgroundColor({bgColor:color.hex})
     };
 
     render(){
         return(
             <div className={style['container']}>
               <div className={style['color-box']}>
-                <CirclePicker />
+                <CirclePicker onSwatchHover={this.handleCircle}/>
                 <div style={{position:'relative'}}>
                   <div className={style['swatch']} onClick={this.handleClick}>
                     <div className={style['color']} style={{backgroundColor:this.state.color}}/>
@@ -46,8 +51,6 @@ export default class extends React.Component{
                   }
                 </div>
               </div>
-            
-    
             </div>
         )
     }

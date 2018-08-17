@@ -6,13 +6,13 @@ import LeftSider from '../components/leftSider/index'
 import RightSider from '../components/rightSider/index'
 import EditContent from '../components/editContent/index'
 import { connect } from 'react-redux'
-import { queryShowContent } from '../actions/show'
+import { queryShowContent,getElement } from '../actions/show'
 
 const { Header, Content, Sider } = Layout
 
 @connect(
   (state) => ({show: state.show}),
-  { queryShowContent }
+  { queryShowContent,getElement }
 )
 
 class ShowEditPage extends Component {
@@ -24,7 +24,6 @@ class ShowEditPage extends Component {
     this.props.queryShowContent({text: '你好啊'});
   }
   render() {
-    console.log('show', this.props.show.text);
     return (
         <Layout>
           <div className={style['nav_box']}>
@@ -34,7 +33,19 @@ class ShowEditPage extends Component {
               defaultSelectedKeys={['2']}
               className={style['edit_nav']}
           >
-              <Menu.Item key="1">文字</Menu.Item>
+              <Menu.Item key="1" onClick={()=>this.props.getElement({
+                  elementType: 'TEXT',
+                  width: 'auto',
+                  height: 'auto',
+                  value: '双击修改',
+                  top: '10px',
+                  left: '10px',
+                  controlProps:{
+                      textAlign: 'center',
+                      fontSize: '16px',
+                      fontColor: '#ccc',
+                  }
+              })}>文字</Menu.Item>
               <Menu.Item key="2">形状</Menu.Item>
               <Menu.Item key="3">图片</Menu.Item>
               <Menu.Item key="4">音频</Menu.Item>
