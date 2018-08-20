@@ -8,12 +8,14 @@ const show = createReducer({}, {
   [type.INPUT_TEXT + type.REQUEST] (state, action) {//输入文本
     return { ...state, value: action}
   },
-  [type.BACKGROUND_COLOR + type.REQUEST] (state, action) {//bgColor
+  [type.BACKGROUND_COLOR + type.REQUEST] (state, action) {//背景颜色
     return { ...state, bgColor: action.bgColor}
   },
-  [type.ELEMENT_ENTITY + type.REQUEST] (state, action) {//bgColor
-    console.log('state',state);
+  [type.ELEMENT_ENTITY + type.REQUEST] (state, action) {//最终传到后台数据
     return { ...state, elementsEntity: action}
+  },
+  [type.SELECT_BACKGROUND_IMG + type.REQUEST] (state, action) {//背景图片路径
+    return { ...state, bgImgUrl: action}
   },
 })
 

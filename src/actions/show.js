@@ -1,4 +1,4 @@
-import { QUERY_SHOW_CONTENT,INPUT_TEXT,BACKGROUND_COLOR,ELEMENT_ENTITY } from '../constants/actionTypes'
+import { QUERY_SHOW_CONTENT,INPUT_TEXT,BACKGROUND_COLOR,ELEMENT_ENTITY,SELECT_BACKGROUND_IMG } from '../constants/actionTypes'
 import axios from 'axios'
 
 export function queryShowContent (params) {
@@ -25,6 +25,16 @@ export function backgroundColor (params) {
     }
 }
 
+//背景图片
+export function selectBackgroundImg (params) {
+    return {
+        actionType: SELECT_BACKGROUND_IMG,
+        payload: params
+    }
+}
+
+
+
 //保存数据
 export function getElement (params) {
     return {
@@ -35,7 +45,7 @@ export function getElement (params) {
 
 export function upDataElementEntity(obj){
     return(dispatch,getState)=>{
-        const data = getState().show.elementsEntity;
+        const data = getState().show.elementsEntity || {};
         console.log('data',data);
         dispatch(getElement(Object.assign(data,obj)))
     }
