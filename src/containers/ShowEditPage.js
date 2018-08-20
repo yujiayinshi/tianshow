@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Menu,} from 'antd'
-import ProspTypes from 'prop-types'
+import { Layout, Menu, Row, Col } from 'antd'
+// import ProspTypes from 'prop-types'
 import style from './ShowEditPage.css'
 import LeftSider from '../components/leftSider/index'
 import RightSider from '../components/rightSider/index'
@@ -26,35 +26,50 @@ class ShowEditPage extends Component {
   render() {
     return (
         <Layout>
-          <div className={style['nav_box']}>
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={['2']}
-              className={style['edit_nav']}
-          >
-              <Menu.Item key="1" onClick={()=>this.props.getElement({
-                  elementType: 'TEXT',
-                  className:'active',
-                  width: 'auto',
-                  height: 'auto',
-                  value: '双击修改',
-                  top: '10px',
-                  left: '10px',
-                  controlProps:{
-                      textAlign: 'center',
-                      fontSize: '16px',
-                      fontColor: '#ccc',
-                  }
-              })}>文字</Menu.Item>
-              <Menu.Item key="2">形状</Menu.Item>
-              <Menu.Item key="3">图片</Menu.Item>
-              <Menu.Item key="4">音频</Menu.Item>
-              <Menu.Item key="5">视频</Menu.Item>
-              <Menu.Item key="6">背景</Menu.Item>
-              <Menu.Item key="7">互动</Menu.Item>
-          </Menu>
-          </div>
+          <Row className={style['nav_box']}>
+            <Col span={8} />
+            <Col span={8}>
+              <Menu
+                theme="dark"
+                mode="horizontal"
+                defaultSelectedKeys={['2']}
+                className={style['edit_nav']}
+              >
+                <Menu.Item
+                  key="1"
+                  onClick={()=>this.props.getElement({
+                    elementType: 'TEXT',
+                    className:'active',
+                    width: 'auto',
+                    height: 'auto',
+                    value: '双击修改',
+                    top: '10px',
+                    left: '10px',
+                    controlProps:{
+                        textAlign: 'center',
+                        fontSize: '16px',
+                        fontColor: '#ccc',
+                    }
+                })}>文字</Menu.Item>
+                <Menu.Item key="2">形状</Menu.Item>
+                <Menu.Item key="3">图片</Menu.Item>
+                <Menu.Item key="4">音频</Menu.Item>
+                <Menu.Item key="5">视频</Menu.Item>
+                <Menu.Item key="6">背景</Menu.Item>
+                <Menu.Item key="7">互动</Menu.Item>
+              </Menu>
+            </Col>
+            <Col span={7} push={1}>
+              <Col span={6} />
+              <Col span={4}>
+                <img alt='' />
+                <span style={{color: '#fff', cursor: 'pointer'}}>预览 </span>
+              </Col>
+              <Col span={4} />
+              <Col span={4} />
+              <Col span={6} />
+            </Col>
+          </Row>
           <Layout style={{height: +window.innerHeight - 56 +'px',width:'100%'}}>
             <Sider width='165px' style={{height:'inherit'}}>
                <LeftSider/>
