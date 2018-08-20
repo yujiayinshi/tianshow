@@ -12,3 +12,50 @@
    flex-direction: row;
    justify-content: flex-end;
 }
+.preview {
+  float: left;
+  width: 423px;
+  padding-left: 42px;
+  border-right: 1px solid hsla(0,0%,86%,.5);
+}
+.preview :global .tab-switch-bar {
+  position: absolute;
+  top: 72px;
+  left: 60px;
+  width: 32px;
+  z-index: 1;
+}
+.preview :global .normal-preview,
+.preview :global .x-preview {
+  display: inline-block;
+  width: 32px;
+  padding: 14px 9px;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: PingFangSC-Regular;
+  color: #646465;
+  border: 1px solid #e8e8e8;
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  text-align: center;
+  cursor: pointer;
+}
+.preview :global .selected {
+  border: none;
+  color: #fff;
+  background-color: #ff6b00;
+}
+.preview :global .iframe {
+  border-radius: 2px;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 3px 4px 0 rgba(40,40,40,.1);
+  position: relative;
+}
+.rightBox {
+  float: left;
+}
+.rightBox :global .h5-qrcode {
+  width: 310px;
+  margin-top: 140px;
+  margin-left: 68px;
+}
