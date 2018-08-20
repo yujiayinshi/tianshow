@@ -4,10 +4,10 @@
 }
 .title{
     text-align: center;
-    height: 48px;
-    line-height: 48px;
+    height: 40px;
+    line-height: 40px;
     border-bottom: 1px solid #001529;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
 }
 .add_template{
@@ -23,7 +23,6 @@
 }
 .scroll{
     overflow: auto;
-    height: 100%;
 }
 .scroll::-webkit-scrollbar {
     display: none;

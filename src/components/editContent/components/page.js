@@ -40,7 +40,7 @@ class Page extends React.Component {
     }
 
     render() {
-        const {elementsEntity} = this.props;
+        const {elementsEntity,bgImgUrl} = this.props;
         let elements = this.buildElementByType(elementsEntity,elementsEntity.className,false);
         return (
             <div onMouseMove={this.mouseMoveHandle.bind(this)}
@@ -49,6 +49,11 @@ class Page extends React.Component {
                  onMouseDown={this.mouseDownHandle.bind(this)}
                  style={this.style()}
                  className={style['page']+' '+this.props.className}>
+                {bgImgUrl.imgUrl&&
+                <div className={style['page_bg']}>
+                    <img src={bgImgUrl.imgUrl} alt="" style={{width:'500px',height:'500px',top:'0',left:'0'}}/>
+                </div>
+                }
                 {elements}
             </div>
         )
@@ -184,6 +189,7 @@ class Page extends React.Component {
         }
         this.readyMove = false;
         this.readyResize = false;
+
     }
 
     mouseMoveHandle(e) {

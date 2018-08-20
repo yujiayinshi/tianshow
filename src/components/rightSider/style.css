@@ -1,6 +1,7 @@
 .container{
     height: inherit;
     background-color: #383838;
+    color: hsla(0,0%,100%,.4);
 }
 .color-box{
   display: flex;
@@ -8,9 +9,10 @@
   flex-direction: row;
   -webkit-flex-direction: row;
   justify-content: space-around;
-  -webkit-justifi-content: space-around;
+  -webkit-justify-content: space-around;
   align-items: center;
   -webkit-align-items: center;
+  margin: 25px 0;
 }
 .color{
   width: 36px;
@@ -20,16 +22,95 @@
 .swatch {
   display: inline-block;
   cursor: pointer;
-};
+}
 .popover{
   position: absolute;
   z-index: 2;
   right: 0;
-};
+}
 .cover{
   position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-};
+}
+.addBgColor_box{
+  border-top: 1px solid #292929;
+}
+.addBgColor_hd{
+  margin: 25px 20px;
+}
+.addBgColor_title{
+  margin-bottom: 10px;
+}
+.addBgColor{
+  width: 310px;
+  height: 310px;
+  border-radius: 2px;
+  border: 1px solid #292929;
+  background-color: #575757;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.addBg_show{
+    width: 310px;
+    height: 310px;
+    border-radius: 2px;
+    border: 1px solid #292929;
+}
+.addBg_show >img{
+    width: 100%;
+    height: 100%;
+}
+.addBgColor:hover{
+  border: 1px solid #1890ff;
+  color: #1890ff;
+}
+.addBgColor_bd{
+  margin: 20px 20px;
+}
+
+.modal :global .ant-modal-header {
+  background: #383838;
+  color: hsla(0,0%,100%,.4);
+  border-bottom: 1px solid #292929;
+}
+.modal :global .ant-modal-body {
+  background: #383838;
+  color: hsla(0,0%,100%,.4);
+  height: 504px;
+  padding: 0;
+}
+.modal :global .ant-modal-title {
+  color: hsla(0,0%,100%,.4);
+}
+.modal_menu :global .ant-menu-item-selected{
+  background-color: #303030 !important;
+}
+
+.imgDepot{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.imgDepot :global .imgDepot_item{
+  width: 107px;
+  height: 107px;
+  margin-right: 20px;
+}
+.imgDepot :global .imgDepot_item>img{
+  width: 100%;
+  height: 100%;
+}
+.addBg_btn{
+    text-align: right;
+    margin-top: 10px;
+}

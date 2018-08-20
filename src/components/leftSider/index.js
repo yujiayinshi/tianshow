@@ -41,7 +41,7 @@ export default class extends React.Component{
         return(
             <div className={style['container']}>
                 <div className={style['title']}>界面</div>
-                <div className={style['scroll']}>
+                <div className={style['scroll']} style={{height: +window.innerHeight - 100 + 'px'}}>
                     {template.map((item,idx)=><Template key={idx} index={idx} data={item}/>)}
                     <div style={{textAlign:'-webkit-right',paddingRight:'10px'}} onClick={this.handleAdd.bind(this)}>
                         <div className={style['add_template']}>

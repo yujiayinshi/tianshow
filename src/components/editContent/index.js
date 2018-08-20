@@ -24,10 +24,12 @@ export default class extends React.Component{
         console.log('elementsEntity',show.elementsEntity);
         return(
             <div className={style['container']}>
-                <Page elementsEntity={show.elementsEntity || {}}
-                      backgroundColor={show.bgColor || '#fff'}
-                      text={show.value || {}}
-                      upDataElementEntity={this.props.upDataElementEntity}
+                <Page
+                    elementsEntity={show.elementsEntity || {}}
+                    backgroundColor={show.bgColor || '#fff'}
+                    text={show.value || {}}
+                    upDataElementEntity={this.props.upDataElementEntity}
+                    bgImgUrl={show.bgImgUrl || {}}
                 />
             </div>
         )
