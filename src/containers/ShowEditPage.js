@@ -29,12 +29,26 @@ class ShowEditPage extends Component {
   componentWillMount(){
     this.props.queryShowContent({text: '你好啊'});
   }
+  setLocal = (obj) => {
+    for (let key in obj) {
+      if (typeof obj[key] !== 'object') {
+        localStorage.setItem(key, obj[key])
+      } else {
+        this.setLocal(obj[key])
+      }
+    }
+  }
+  toPreview = () => {
+    const { elementsEntity = {} } = this.props.show
+    this.setLocal(elementsEntity)
+    this.setState({previewed: !this.state.previewed})
+  }
   render() {
     const { barSelect } = this.state
     return (
       <Layout>
         <Modal
-          className='111'
+          destroyOnClose={Boolean(true)}
           width='956px'
           visible={this.state.previewed}
           onCancel={() => { this.setState({previewed: false}) }}
@@ -108,7 +122,7 @@ class ShowEditPage extends Component {
           </Col>
           <Col span={7} push={1}>
             <Col span={6} />
-            <Col span={4} onClick={() => { this.setState({previewed: !this.state.previewed}) }}>
+            <Col span={4} onClick={this.toPreview}>
               <img alt='' />
               <span style={{color: '#fff', cursor: 'pointer'}}>预览 </span>
             </Col>
