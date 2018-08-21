@@ -2,14 +2,21 @@ import React from 'react'
 import style from '../style.css'
 import {Icon,Row,Col,Slider, Input,Button} from 'antd'
 import ReactCrop from 'react-image-crop'
+import 'react-image-crop/dist/ReactCrop.css'
 
 
 
 class AddBgImg extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state={
             inputValue: 0,
+            crop: {
+                x: 10,
+                y: 0,
+                width: 80,
+                height: 100,
+            }
         }
     }
 
@@ -30,33 +37,31 @@ class AddBgImg extends React.Component{
     };
 
     //剪切
-    handleCrop=(crop)=>{
-        console.log('crop',crop);
+    handleCrop=(item)=>{
+        console.log('crop',item);
+        const {crop} = this.state;
+        crop.x = item.x;
+        console.log('改变:',crop);
+        //this.setState({crop: crop.x = item.x})
     };
 
     render(){
         const {inputValue} = this.state;
         const {imgUrl} = this.props;
-        const crop = {
-            x: 20,
-            y: 10,
-            width: 80,
-            height: 100,
-        }
         return(
             <div className={style['addBgColor_box']}>
                 <div className={style['addBgColor_hd']}>
                     <div className={style['addBgColor_title']}>叠加图片</div>
                     {imgUrl?
                         <div className={style['addBg_show']}>
-                            <img src={this.props.imgUrl} alt=""/>
-                            {/*<ReactCrop*/}
-                                {/*src={this.props.imgUrl}*/}
-                                {/*crop={crop}*/}
-                                {/*style={{height: '100%'}}*/}
-                                {/*imageStyle={{width:'100%',height:'100%'}}*/}
-                                {/*onChange={this.handleCrop}*/}
-                            {/*/>*/}
+                            {/*<img src={this.props.imgUrl} alt=""/>*/}
+                            <ReactCrop
+                                src={this.props.imgUrl}
+                                crop={this.state.crop}
+                                style={{height: '100%'}}
+                                imageStyle={{width:'100%',height:'100%'}}
+                                onChange={this.handleCrop}
+                            />
                         </div>
                         :
                         <div className={style['addBgColor']} onClick={this.props.handleAddImg}>
