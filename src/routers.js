@@ -1,5 +1,6 @@
 import HomePage from './containers/HomePage'
 import ShowEditPage from './containers/ShowEditPage'
+import Preview from './containers/Preview'
 
 const routers = [
   {
@@ -16,6 +17,11 @@ const routers = [
     path: '/show/:id',
     exact: true,
     component: ShowEditPage
+  },
+  {
+    path: '/preview',
+    exact: true,
+    component: Preview
   }
 ]
 
